@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ruoyi-system" />
+        <module name="wj_concept" />
+        <module name="wj_cibiao" />
+        <module name="wj_data" />
+        <module name="ruoyi-standard" />
+        <module name="ruoyi-graph" />
+        <module name="ruoyi-generator" />
+        <module name="wj_mingming" />
+        <module name="ruoyi-framework" />
+        <module name="wj_shiyou" />
+        <module name="wj_edge" />
+        <module name="ruoyi-common" />
+        <module name="ruoyi-quartz" />
+        <module name="wj_element" />
+        <module name="ruoyi-allow" />
+        <module name="ruoyi-admin" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="heyi-datatype" target="1.8" />
+      <module name="ruoyi-datatype" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.standard.mapper.StandardMapper">
+    
+    <resultMap type="Standard" id="StandardResult">
+        <result property="standardId"    column="standard_id"    />
+        <result property="englishName"    column="english_name"    />
+        <result property="chineseName"    column="chinese_name"    />
+        <result property="standardOrganization"    column="standard_organization"    />
+        <result property="standardCondition"    column="standard_condition"    />
+        <result property="standardIntroduction"    column="standard_introduction"    />
+    </resultMap>
+
+    <sql id="selectStandardVo">
+        select standard_id, english_name, chinese_name, standard_organization, standard_condition, standard_introduction from standard
+    </sql>
+
+    <select id="selectStandardList" parameterType="Standard" resultMap="StandardResult">
+        <include refid="selectStandardVo"/>
+        <where>  
+            <if test="standardId != null  and standardId != ''"> and standard_id = #{standardId}</if>
+            <if test="englishName != null  and englishName != ''"> and english_name like concat('%', #{englishName}, '%')</if>
+            <if test="chineseName != null  and chineseName != ''"> and chinese_name like concat('%', #{chineseName}, '%')</if>
+            <if test="standardOrganization != null  and standardOrganization != ''"> and standard_organization = #{standardOrganization}</if>
+            <if test="standardCondition != null  and standardCondition != ''"> and standard_condition = #{standardCondition}</if>
+            <if test="standardIntroduction != null  and standardIntroduction != ''"> and standard_introduction = #{standardIntroduction}</if>
+        </where>
+    </select>
+    
+    <select id="selectStandardByStandardId" parameterType="String" resultMap="StandardResult">
+        <include refid="selectStandardVo"/>
+        where standard_id = #{standardId}
+    </select>
+        
+    <insert id="insertStandard" parameterType="Standard">
+        insert into standard
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="standardId != null">standard_id,</if>
+            <if test="englishName != null">english_name,</if>
+            <if test="chineseName != null and chineseName != ''">chinese_name,</if>
+            <if test="standardOrganization != null">standard_organization,</if>
+            <if test="standardCondition != null">standard_condition,</if>
+            <if test="standardIntroduction != null">standard_introduction,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="standardId != null">#{standardId},</if>
+            <if test="englishName != null">#{englishName},</if>
+            <if test="chineseName != null and chineseName != ''">#{chineseName},</if>
+            <if test="standardOrganization != null">#{standardOrganization},</if>
+            <if test="standardCondition != null">#{standardCondition},</if>
+            <if test="standardIntroduction != null">#{standardIntroduction},</if>
+         </trim>
+    </insert>
+
+    <update id="updateStandard" parameterType="Standard">
+        update standard
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="englishName != null">english_name = #{englishName},</if>
+            <if test="chineseName != null and chineseName != ''">chinese_name = #{chineseName},</if>
+            <if test="standardOrganization != null">standard_organization = #{standardOrganization},</if>
+            <if test="standardCondition != null">standard_condition = #{standardCondition},</if>
+            <if test="standardIntroduction != null">standard_introduction = #{standardIntroduction},</if>
+        </trim>
+        where standard_id = #{standardId}
+    </update>
+
+    <delete id="deleteStandardByStandardId" parameterType="String">
+        delete from standard where standard_id = #{standardId}
+    </delete>
+
+    <delete id="deleteStandardByStandardIds" parameterType="String">
+        delete from standard where standard_id in 
+        <foreach item="standardId" collection="array" open="(" separator="," close=")">
+            #{standardId}
+        </foreach>
+    </delete>
+
+</mapper>

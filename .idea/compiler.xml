@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ruoyi-system" />
+        <module name="wj_concept" />
+        <module name="ruoyi-standard" />
+        <module name="wj_cibiao" />
+        <module name="ruoyi-graph" />
+        <module name="wj_data" />
+        <module name="ruoyi-generator" />
+        <module name="wj_mingming" />
+        <module name="ruoyi-framework" />
+        <module name="wj_shiyou" />
+        <module name="wj_edge" />
+        <module name="ruoyi-common" />
+        <module name="ruoyi-quartz" />
+        <module name="ruoyi-allow" />
+        <module name="wj_element" />
+        <module name="ruoyi-admin" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ruoyi" target="1.8" />
+      <module name="ruoyi-admin" target="1.8" />
+      <module name="ruoyi-allow" target="1.8" />
+      <module name="ruoyi-common" target="1.8" />
+      <module name="ruoyi-framework" target="1.8" />
+      <module name="ruoyi-generator" target="1.8" />
+      <module name="ruoyi-graph" target="1.8" />
+      <module name="ruoyi-quartz" target="1.8" />
+      <module name="ruoyi-standard" target="1.8" />
+      <module name="ruoyi-system" target="1.8" />
+      <module name="wj_cibiao" target="1.8" />
+      <module name="wj_concept" target="1.8" />
+      <module name="wj_data" target="1.8" />
+      <module name="wj_edge" target="1.8" />
+      <module name="wj_element" target="1.8" />
+      <module name="wj_mingming" target="1.8" />
+      <module name="wj_shiyou" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

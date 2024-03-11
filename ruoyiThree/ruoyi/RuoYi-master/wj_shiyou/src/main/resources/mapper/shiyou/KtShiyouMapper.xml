@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.shiyou.mapper.KtShiyouMapper">
+    
+    <resultMap type="KtShiyou" id="KtShiyouResult">
+        <result property="syId"    column="sy_id"    />
+        <result property="词汇表名称"    column="词汇表名称"    />
+        <result property="英文名称"    column="英文名称"    />
+        <result property="中文名称"    column="中文名称"    />
+        <result property="英文解释"    column="英文解释"    />
+    </resultMap>
+
+    <sql id="selectKtShiyouVo">
+        select sy_id, 词汇表名称, 英文名称, 中文名称, 英文解释 from kt_shiyou
+    </sql>
+
+    <select id="selectKtShiyouList" parameterType="KtShiyou" resultMap="KtShiyouResult">
+        <include refid="selectKtShiyouVo"/>
+        <where>  
+            <if test="词汇表名称 != null  and 词汇表名称 != ''"> and 词汇表名称 = #{词汇表名称}</if>
+            <if test="英文名称 != null  and 英文名称 != ''"> and 英文名称 = #{英文名称}</if>
+            <if test="中文名称 != null  and 中文名称 != ''"> and 中文名称 = #{中文名称}</if>
+            <if test="英文解释 != null  and 英文解释 != ''"> and 英文解释 = #{英文解释}</if>
+        </where>
+    </select>
+    
+    <select id="selectKtShiyouBySyId" parameterType="Long" resultMap="KtShiyouResult">
+        <include refid="selectKtShiyouVo"/>
+        where sy_id = #{syId}
+    </select>
+        
+    <insert id="insertKtShiyou" parameterType="KtShiyou" useGeneratedKeys="true" keyProperty="syId">
+        insert into kt_shiyou
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="词汇表名称 != null and 词汇表名称 != ''">词汇表名称,</if>
+            <if test="英文名称 != null and 英文名称 != ''">英文名称,</if>
+            <if test="中文名称 != null and 中文名称 != ''">中文名称,</if>
+            <if test="英文解释 != null and 英文解释 != ''">英文解释,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="词汇表名称 != null and 词汇表名称 != ''">#{词汇表名称},</if>
+            <if test="英文名称 != null and 英文名称 != ''">#{英文名称},</if>
+            <if test="中文名称 != null and 中文名称 != ''">#{中文名称},</if>
+            <if test="英文解释 != null and 英文解释 != ''">#{英文解释},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKtShiyou" parameterType="KtShiyou">
+        update kt_shiyou
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="词汇表名称 != null and 词汇表名称 != ''">词汇表名称 = #{词汇表名称},</if>
+            <if test="英文名称 != null and 英文名称 != ''">英文名称 = #{英文名称},</if>
+            <if test="中文名称 != null and 中文名称 != ''">中文名称 = #{中文名称},</if>
+            <if test="英文解释 != null and 英文解释 != ''">英文解释 = #{英文解释},</if>
+        </trim>
+        where sy_id = #{syId}
+    </update>
+
+    <delete id="deleteKtShiyouBySyId" parameterType="Long">
+        delete from kt_shiyou where sy_id = #{syId}
+    </delete>
+
+    <delete id="deleteKtShiyouBySyIds" parameterType="String">
+        delete from kt_shiyou where sy_id in 
+        <foreach item="syId" collection="array" open="(" separator="," close=")">
+            #{syId}
+        </foreach>
+    </delete>
+
+</mapper>

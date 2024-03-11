@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.concept.mapper.KtMeanMapper">
+    
+    <resultMap type="KtMean" id="KtMeanResult">
+        <result property="编号"    column="编号"    />
+        <result property="值含义"    column="值含义"    />
+    </resultMap>
+
+    <sql id="selectKtMeanVo">
+        select 编号, 值含义 from kt_mean
+    </sql>
+
+    <select id="selectKtMeanList" parameterType="KtMean" resultMap="KtMeanResult">
+        <include refid="selectKtMeanVo"/>
+        <where>  
+            <if test="值含义 != null  and 值含义 != ''"> and 值含义 = #{值含义}</if>
+        </where>
+    </select>
+    
+    <select id="selectKtMeanBy编号" parameterType="Long" resultMap="KtMeanResult">
+        <include refid="selectKtMeanVo"/>
+        where 编号 = #{编号}
+    </select>
+        
+    <insert id="insertKtMean" parameterType="KtMean" useGeneratedKeys="true" keyProperty="编号">
+        insert into kt_mean
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="值含义 != null and 值含义 != ''">值含义,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="值含义 != null and 值含义 != ''">#{值含义},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKtMean" parameterType="KtMean">
+        update kt_mean
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="值含义 != null and 值含义 != ''">值含义 = #{值含义},</if>
+        </trim>
+        where 编号 = #{编号}
+    </update>
+
+    <delete id="deleteKtMeanBy编号" parameterType="Long">
+        delete from kt_mean where 编号 = #{编号}
+    </delete>
+
+    <delete id="deleteKtMeanBy编号s" parameterType="String">
+        delete from kt_mean where 编号 in 
+        <foreach item="编号" collection="array" open="(" separator="," close=")">
+            #{编号}
+        </foreach>
+    </delete>
+
+</mapper>

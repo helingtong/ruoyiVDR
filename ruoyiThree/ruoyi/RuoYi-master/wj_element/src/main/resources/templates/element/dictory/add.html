@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('新增数据元目录')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-dictory-add">
+            <div class="form-group">
+                <label class="col-sm-3 control-label is-required">数据元名称：</label>
+                <div class="col-sm-8">
+                    <textarea name="数据元名称" class="form-control" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label is-required">对象类限定词：</label>
+                <div class="col-sm-8">
+                    <textarea name="对象类限定词" class="form-control" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label is-required">对象类：</label>
+                <div class="col-sm-8">
+                    <textarea name="对象类" class="form-control" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label is-required">特性类限定词：</label>
+                <div class="col-sm-8">
+                    <textarea name="特性类限定词" class="form-control" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label is-required">特性类：</label>
+                <div class="col-sm-8">
+                    <textarea name="特性类" class="form-control" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label is-required">表示类：</label>
+                <div class="col-sm-8">
+                    <textarea name="表示类" class="form-control" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label is-required">计量单位：</label>
+                <div class="col-sm-8">
+                    <textarea name="计量单位" class="form-control" required></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var prefix = ctx + "element/dictory"
+        $("#form-dictory-add").validate({
+            focusCleanup: true
+        });
+
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + "/add", $('#form-dictory-add').serialize());
+            }
+        }
+    </script>
+</body>
+</html>

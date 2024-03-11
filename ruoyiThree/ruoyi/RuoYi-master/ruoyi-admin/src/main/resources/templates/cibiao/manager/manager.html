@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('词表基本信息列表')" />
+</head>
+<body class="gray-bg">
+     <div class="container-div">
+        <div class="row">
+             <div class="btn-group-sm" id="toolbar" role="group">
+                <a class="btn btn-success" onclick="$.operate.add()" shiro:hasPermission="cibiao:manager:add">
+                    <i class="fa fa-plus"></i> 添加
+                </a>
+                <a class="btn btn-primary single disabled" onclick="$.operate.edit()" shiro:hasPermission="cibiao:manager:edit">
+                    <i class="fa fa-edit"></i> 修改
+                </a>
+                <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()" shiro:hasPermission="cibiao:manager:remove">
+                    <i class="fa fa-remove"></i> 导入
+                </a>
+                <a class="btn btn-warning" onclick="$.table.exportExcel()" shiro:hasPermission="cibiao:manager:export">
+                    <i class="fa fa-download"></i> 导出
+                </a>
+                <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+            </div>
+            <div class="col-sm-12 select-table table-striped">
+                <table id="bootstrap-table"></table>
+            </div>
+        </div>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var editFlag = [[${@permission.hasPermi('cibiao:manager:edit')}]];
+        var removeFlag = [[${@permission.hasPermi('cibiao:manager:remove')}]];
+        var prefix = ctx + "cibiao/manager";
+
+        $(function() {
+            var options = {
+                url: prefix + "/list",
+                createUrl: prefix + "/add",
+                updateUrl: prefix + "/edit/{id}",
+                removeUrl: prefix + "/remove",
+                exportUrl: prefix + "/export",
+                modalName: "词表基本信息",
+                columns: [{
+                    checkbox: true
+                },
+                {
+                    field: 'cbId',
+                    title: 'cb_id',
+                    visible: false
+                },
+                {
+                    field: 'name',
+                    title: '词汇名称'
+                },
+                {
+                    field: 'type',
+                    title: '词汇类型'
+                },
+                {
+                    field: 'comment',
+                    title: '词汇定义'
+                },
+                {
+                    field: 'domain',
+                    title: '定义域'
+                },
+                {
+                    field: 'range',
+                    title: '值域'
+                },
+                {
+                    title: '操作',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                        actions.push('<a class="btn btn-success btn-sm ' + editFlag + '" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.cbId + '\')"><i class="fa fa-edit"></i>编辑</a> ');
+                        actions.push('<a class="btn btn-danger btn-sm ' + removeFlag + '" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.cbId + '\')"><i class="fa fa-remove"></i>删除</a>');
+                        return actions.join('');
+                    }
+                }]
+            };
+            $.table.init(options);
+        });
+    </script>
+</body>
+</html>

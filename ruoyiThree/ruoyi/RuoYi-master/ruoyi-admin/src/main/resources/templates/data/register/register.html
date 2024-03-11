@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('数据元概念注册列表')" />
+</head>
+<body class="gray-bg">
+<div class="main-content">
+    <form id="form-user-add" class="form-horizontal">
+        <input name="deptId" type="hidden" id="treeId"/>
+        <h3 align="center">数据元概念注册</h3>
+        <div class="custom-hr"></div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">中文名称：</label>
+                    <div class="col-sm-8">
+                        <input value="钻机高度" placeholder="请输入名称" class="form-control" type="text" maxlength="30" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">英文名称：</label>
+                    <div class="col-sm-8">
+                        <input value="Rig Height" placeholder="请输入同义名称" class="form-control" type="text" maxlength="30" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">标识符：</label>
+                    <div class="col-sm-8">
+                        <input value="PC_DQ_XXZX_2.1.5_3" placeholder="请输入标识符" class="form-control" type="text" maxlength="30" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">语境：</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" name="">
+                            <option>petroleum</option>
+                            <option>org</option>
+                            <option>owl</option>
+                            <option>time</option>
+                            <option>PIDD</option>
+                            <option>rdf</option>
+                            <option>dct</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">对象类概念：</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">钻机</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">特性：</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">高度</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">注册机构：</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">语义信息服务中心</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">注册人：</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">admin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">注册来源：</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">PIDD词典</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">注册状态：</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">进行中</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">定义：</label>
+                    <div class="col-xs-10">
+                        <textarea name="remark" maxlength="200" class="form-control" cols="30" rows="2">钻井平台高于地面或水平面的高度。</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">描述：</label>
+                    <div class="col-xs-10">
+                        <textarea name="remark" maxlength="200" class="form-control" cols="30" rows="2">钻机高度直接取决于钻柱的长度，包括钻杆、钻铤和钻头。在深井钻井中，可能需要使用很长的钻柱来达到目标地层。</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-sm-offset-5 col-sm-10">
+            <button type="button" class="btn btn-large btn-primary" onclick="submitHandler()"><i class="check"></i>注 册 </button>&nbsp;
+            <button type="button" class="btn btn-large btn-warning" onclick="submitHandler()"><i class="fa fa-check-square"></i>提交 </button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

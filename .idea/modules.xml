@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-admin/ruoyi-admin.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-admin/ruoyi-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-allow/ruoyi-allow.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-allow/ruoyi-allow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-common/ruoyi-common.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-common/ruoyi-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-framework/ruoyi-framework.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-framework/ruoyi-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-generator/ruoyi-generator.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-generator/ruoyi-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-graph/ruoyi-graph.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-graph/ruoyi-graph.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-quartz/ruoyi-quartz.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-quartz/ruoyi-quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-standard/ruoyi-standard.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-standard/ruoyi-standard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-system/ruoyi-system.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/ruoyi-system/ruoyi-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ruoyiVDR.iml" filepath="$PROJECT_DIR$/.idea/ruoyiVDR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_cibiao/wj_cibiao.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_cibiao/wj_cibiao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_concept/wj_concept.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_concept/wj_concept.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_data/wj_data.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_data/wj_data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_edge/wj_edge.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_edge/wj_edge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_element/wj_element.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_element/wj_element.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_mingming/wj_mingming.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_mingming/wj_mingming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_shiyou/wj_shiyou.iml" filepath="$PROJECT_DIR$/ruoyiThree/ruoyi/RuoYi-master/wj_shiyou/wj_shiyou.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.element.mapper.KtElementMapper">
+    
+    <resultMap type="KtElement" id="KtElementResult">
+        <result property="编号"    column="编号"    />
+        <result property="数据元名称"    column="数据元名称"    />
+        <result property="对象类限定词"    column="对象类限定词"    />
+        <result property="对象类"    column="对象类"    />
+        <result property="特性类限定词"    column="特性类限定词"    />
+        <result property="特性类"    column="特性类"    />
+        <result property="表示类"    column="表示类"    />
+        <result property="计量单位"    column="计量单位"    />
+    </resultMap>
+
+    <sql id="selectKtElementVo">
+        select 编号, 数据元名称, 对象类限定词, 对象类, 特性类限定词, 特性类, 表示类, 计量单位 from kt_element
+    </sql>
+
+    <select id="selectKtElementList" parameterType="KtElement" resultMap="KtElementResult">
+        <include refid="selectKtElementVo"/>
+        <where>  
+            <if test="数据元名称 != null  and 数据元名称 != ''"> and 数据元名称 = #{数据元名称}</if>
+            <if test="对象类限定词 != null  and 对象类限定词 != ''"> and 对象类限定词 = #{对象类限定词}</if>
+            <if test="对象类 != null  and 对象类 != ''"> and 对象类 = #{对象类}</if>
+            <if test="特性类限定词 != null  and 特性类限定词 != ''"> and 特性类限定词 = #{特性类限定词}</if>
+            <if test="特性类 != null  and 特性类 != ''"> and 特性类 = #{特性类}</if>
+            <if test="表示类 != null  and 表示类 != ''"> and 表示类 = #{表示类}</if>
+            <if test="计量单位 != null  and 计量单位 != ''"> and 计量单位 = #{计量单位}</if>
+        </where>
+    </select>
+    
+    <select id="selectKtElementBy编号" parameterType="Long" resultMap="KtElementResult">
+        <include refid="selectKtElementVo"/>
+        where 编号 = #{编号}
+    </select>
+        
+    <insert id="insertKtElement" parameterType="KtElement" useGeneratedKeys="true" keyProperty="编号">
+        insert into kt_element
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="数据元名称 != null and 数据元名称 != ''">数据元名称,</if>
+            <if test="对象类限定词 != null and 对象类限定词 != ''">对象类限定词,</if>
+            <if test="对象类 != null and 对象类 != ''">对象类,</if>
+            <if test="特性类限定词 != null and 特性类限定词 != ''">特性类限定词,</if>
+            <if test="特性类 != null and 特性类 != ''">特性类,</if>
+            <if test="表示类 != null and 表示类 != ''">表示类,</if>
+            <if test="计量单位 != null and 计量单位 != ''">计量单位,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="数据元名称 != null and 数据元名称 != ''">#{数据元名称},</if>
+            <if test="对象类限定词 != null and 对象类限定词 != ''">#{对象类限定词},</if>
+            <if test="对象类 != null and 对象类 != ''">#{对象类},</if>
+            <if test="特性类限定词 != null and 特性类限定词 != ''">#{特性类限定词},</if>
+            <if test="特性类 != null and 特性类 != ''">#{特性类},</if>
+            <if test="表示类 != null and 表示类 != ''">#{表示类},</if>
+            <if test="计量单位 != null and 计量单位 != ''">#{计量单位},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKtElement" parameterType="KtElement">
+        update kt_element
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="数据元名称 != null and 数据元名称 != ''">数据元名称 = #{数据元名称},</if>
+            <if test="对象类限定词 != null and 对象类限定词 != ''">对象类限定词 = #{对象类限定词},</if>
+            <if test="对象类 != null and 对象类 != ''">对象类 = #{对象类},</if>
+            <if test="特性类限定词 != null and 特性类限定词 != ''">特性类限定词 = #{特性类限定词},</if>
+            <if test="特性类 != null and 特性类 != ''">特性类 = #{特性类},</if>
+            <if test="表示类 != null and 表示类 != ''">表示类 = #{表示类},</if>
+            <if test="计量单位 != null and 计量单位 != ''">计量单位 = #{计量单位},</if>
+        </trim>
+        where 编号 = #{编号}
+    </update>
+
+    <delete id="deleteKtElementBy编号" parameterType="Long">
+        delete from kt_element where 编号 = #{编号}
+    </delete>
+
+    <delete id="deleteKtElementBy编号s" parameterType="String">
+        delete from kt_element where 编号 in 
+        <foreach item="编号" collection="array" open="(" separator="," close=")">
+            #{编号}
+        </foreach>
+    </delete>
+
+</mapper>

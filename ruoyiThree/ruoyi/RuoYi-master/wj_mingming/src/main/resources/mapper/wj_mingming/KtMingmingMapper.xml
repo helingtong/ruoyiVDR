@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.wj.mapper.KtMingmingMapper">
+    
+    <resultMap type="KtMingming" id="KtMingmingResult">
+        <result property="mmId"    column="mm_id"    />
+        <result property="prefix"    column="prefix"    />
+        <result property="namespace"    column="namespace"    />
+        <result property="authority"    column="authority"    />
+        <result property="reference"    column="reference"    />
+    </resultMap>
+
+    <sql id="selectKtMingmingVo">
+        select mm_id, prefix, namespace, authority, reference from kt_mingming
+    </sql>
+
+    <select id="selectKtMingmingList" parameterType="KtMingming" resultMap="KtMingmingResult">
+        <include refid="selectKtMingmingVo"/>
+        <where>  
+            <if test="prefix != null  and prefix != ''"> and prefix = #{prefix}</if>
+            <if test="namespace != null  and namespace != ''"> and namespace = #{namespace}</if>
+            <if test="authority != null  and authority != ''"> and authority = #{authority}</if>
+            <if test="reference != null  and reference != ''"> and reference = #{reference}</if>
+        </where>
+    </select>
+    
+    <select id="selectKtMingmingByMmId" parameterType="Long" resultMap="KtMingmingResult">
+        <include refid="selectKtMingmingVo"/>
+        where mm_id = #{mmId}
+    </select>
+        
+    <insert id="insertKtMingming" parameterType="KtMingming" useGeneratedKeys="true" keyProperty="mmId">
+        insert into kt_mingming
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="prefix != null and prefix != ''">prefix,</if>
+            <if test="namespace != null and namespace != ''">namespace,</if>
+            <if test="authority != null and authority != ''">authority,</if>
+            <if test="reference != null and reference != ''">reference,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="prefix != null and prefix != ''">#{prefix},</if>
+            <if test="namespace != null and namespace != ''">#{namespace},</if>
+            <if test="authority != null and authority != ''">#{authority},</if>
+            <if test="reference != null and reference != ''">#{reference},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKtMingming" parameterType="KtMingming">
+        update kt_mingming
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="prefix != null and prefix != ''">prefix = #{prefix},</if>
+            <if test="namespace != null and namespace != ''">namespace = #{namespace},</if>
+            <if test="authority != null and authority != ''">authority = #{authority},</if>
+            <if test="reference != null and reference != ''">reference = #{reference},</if>
+        </trim>
+        where mm_id = #{mmId}
+    </update>
+
+    <delete id="deleteKtMingmingByMmId" parameterType="Long">
+        delete from kt_mingming where mm_id = #{mmId}
+    </delete>
+
+    <delete id="deleteKtMingmingByMmIds" parameterType="String">
+        delete from kt_mingming where mm_id in 
+        <foreach item="mmId" collection="array" open="(" separator="," close=")">
+            #{mmId}
+        </foreach>
+    </delete>
+
+</mapper>

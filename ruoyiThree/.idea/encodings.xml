@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/heyi-datatype/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/heyi-datatype/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-admin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-allow/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-allow/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-datatype/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-datatype/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-framework/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-generator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-graph/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-graph/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-quartz/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-quartz/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-standard/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-standard/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/ruoyi-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_cibiao/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_cibiao/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_concept/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_concept/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_data/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_edge/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_edge/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_element/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_element/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_mingming/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_mingming/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_shiyou/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi/RuoYi-master/wj_shiyou/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

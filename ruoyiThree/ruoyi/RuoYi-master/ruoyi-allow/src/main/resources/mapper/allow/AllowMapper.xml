@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.allow.mapper.AllowMapper">
+    
+    <resultMap type="Allow" id="AllowResult">
+        <result property="allowId"    column="allow_id"    />
+        <result property="allowValue"    column="allow_value"    />
+        <result property="allowNote"    column="allow_note"    />
+    </resultMap>
+
+    <sql id="selectAllowVo">
+        select allow_id, allow_value, allow_note from allow
+    </sql>
+
+    <select id="selectAllowList" parameterType="Allow" resultMap="AllowResult">
+        <include refid="selectAllowVo"/>
+        <where>  
+            <if test="allowValue != null  and allowValue != ''"> and allow_value = #{allowValue}</if>
+            <if test="allowNote != null  and allowNote != ''"> and allow_note = #{allowNote}</if>
+        </where>
+    </select>
+    
+    <select id="selectAllowByAllowId" parameterType="String" resultMap="AllowResult">
+        <include refid="selectAllowVo"/>
+        where allow_id = #{allowId}
+    </select>
+        
+    <insert id="insertAllow" parameterType="Allow">
+        insert into allow
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="allowId != null">allow_id,</if>
+            <if test="allowValue != null">allow_value,</if>
+            <if test="allowNote != null">allow_note,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="allowId != null">#{allowId},</if>
+            <if test="allowValue != null">#{allowValue},</if>
+            <if test="allowNote != null">#{allowNote},</if>
+         </trim>
+    </insert>
+
+    <update id="updateAllow" parameterType="Allow">
+        update allow
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="allowValue != null">allow_value = #{allowValue},</if>
+            <if test="allowNote != null">allow_note = #{allowNote},</if>
+        </trim>
+        where allow_id = #{allowId}
+    </update>
+
+    <delete id="deleteAllowByAllowId" parameterType="String">
+        delete from allow where allow_id = #{allowId}
+    </delete>
+
+    <delete id="deleteAllowByAllowIds" parameterType="String">
+        delete from allow where allow_id in 
+        <foreach item="allowId" collection="array" open="(" separator="," close=")">
+            #{allowId}
+        </foreach>
+    </delete>
+
+</mapper>

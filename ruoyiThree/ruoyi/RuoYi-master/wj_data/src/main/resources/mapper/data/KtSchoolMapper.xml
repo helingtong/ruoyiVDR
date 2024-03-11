@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.data.mapper.KtSchoolMapper">
+    
+    <resultMap type="KtSchool" id="KtSchoolResult">
+        <result property="scId"    column="sc_id"    />
+        <result property="scName"    column="sc_name"    />
+        <result property="aId"    column="a_id"    />
+    </resultMap>
+
+    <sql id="selectKtSchoolVo">
+        select sc_id, sc_name, a_id from kt_school
+    </sql>
+
+    <select id="selectKtSchoolList" parameterType="KtSchool" resultMap="KtSchoolResult">
+        <include refid="selectKtSchoolVo"/>
+        <where>  
+            <if test="scName != null  and scName != ''"> and sc_name like concat('%', #{scName}, '%')</if>
+            <if test="aId != null "> and a_id = #{aId}</if>
+        </where>
+    </select>
+    
+    <select id="selectKtSchoolByScId" parameterType="Integer" resultMap="KtSchoolResult">
+        <include refid="selectKtSchoolVo"/>
+        where sc_id = #{scId}
+    </select>
+        
+    <insert id="insertKtSchool" parameterType="KtSchool" useGeneratedKeys="true" keyProperty="scId">
+        insert into kt_school
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="scName != null">sc_name,</if>
+            <if test="aId != null">a_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="scName != null">#{scName},</if>
+            <if test="aId != null">#{aId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKtSchool" parameterType="KtSchool">
+        update kt_school
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="scName != null">sc_name = #{scName},</if>
+            <if test="aId != null">a_id = #{aId},</if>
+        </trim>
+        where sc_id = #{scId}
+    </update>
+
+    <delete id="deleteKtSchoolByScId" parameterType="Integer">
+        delete from kt_school where sc_id = #{scId}
+    </delete>
+
+    <delete id="deleteKtSchoolByScIds" parameterType="String">
+        delete from kt_school where sc_id in 
+        <foreach item="scId" collection="array" open="(" separator="," close=")">
+            #{scId}
+        </foreach>
+    </delete>
+
+</mapper>
